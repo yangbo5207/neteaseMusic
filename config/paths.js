@@ -65,6 +65,13 @@ const resolveModule = (resolveFn, filePath) => {
   return resolveFn(`${filePath}.js`);
 };
 
+const alias = {
+  src: resolveApp('src'),
+  components: resolveApp('src/components'),
+  pages: resolveApp('src/pages'),
+  utils: resolveApp('src/utils')
+}
+
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
@@ -82,8 +89,7 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+  alias
 };
-
-
 
 module.exports.moduleFileExtensions = moduleFileExtensions;
