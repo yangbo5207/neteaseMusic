@@ -24,9 +24,10 @@
       "components/*": ["./src/components/*"],
       "pages/*": ["./src/pages/*"],
       "utils/*": ["./src/utils/*"]
-    }
+    },
+    "experimentalDecorators": true
   },
   "include": [
     "src"
-  ]
+  ],
 }
