@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { req } from './req';
 import _ from 'lodash';
+import { req } from './req';
 
 /** 请求头信息调整 */
 // @ts-ignore
