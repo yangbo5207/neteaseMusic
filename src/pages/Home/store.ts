@@ -1,17 +1,17 @@
 import { observable, action, computed } from 'mobx';
+import * as api from './api';
+
 
 export class HomeStore {
   @observable
-  public count: number = 0
+  public recommended: Array<home.album> = []
 
   @action
-  public plus = () => {
-    this.count++;
-  }
+  public getRecommended = async () => {
+    const res = await api.getRecommendedApi();
 
-  @action
-  public reduce = () => {
-    this.count--;
+    console.log(res);
+    this.recommended = res.result;
   }
 }
 

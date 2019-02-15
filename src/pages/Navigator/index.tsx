@@ -1,7 +1,5 @@
 import React from 'react';
 import { NavLink, Route, Redirect } from 'react-router-dom';
-import axios from 'axios';
-import http from 'utils/http';
 import Home from '../Home';
 import Video from '../Video';
 import Myself from '../Myself';
@@ -13,10 +11,6 @@ import './style.scss';
 class Navigator extends React.Component {
   componentDidMount() {
     document.title = "首页";
-
-    http.get('http://localhost:3000/search?keywords=%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA').then(res => {
-      console.log(res);
-    });
   }
 
   render() {

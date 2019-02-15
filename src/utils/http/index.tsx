@@ -57,14 +57,12 @@ axios.interceptors.request.use(async (config: req.HTTPReqConfig): Promise<any> =
   }
 
   return config;
-})
+});
 
 /** 返回结果过滤 */
 axios.interceptors.response.use((response: any): any => {
-  console.log(response);
-
   return response.data;
-})
+});
 
 export function get<T>(requestURL: string, config?: req.HTTPReqConfig): Promise<any> {
   return axios.get(requestURL, config);
@@ -76,6 +74,6 @@ export function post(requestURL: string, params: any, config?: req.HTTPReqConfig
 
 const http = {
   get, post
-}
+};
 
 export default http;

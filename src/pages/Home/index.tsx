@@ -1,7 +1,7 @@
 import React from 'react';
 import { HomeStore } from 'src/pages/Home/store';
 import { inject, observer } from 'mobx-react';
-import { Button } from 'antd-mobile';
+import { toJS } from 'mobx';
 
 interface Props {}
 interface InjectedProps extends Props {
@@ -15,14 +15,21 @@ class Home extends React.Component<Props, any> {
     return this.props as InjectedProps;
   }
 
+  componentDidMount() {
+    const { HomeStore } = this.injected;
+    HomeStore.getRecommended();
+  }
+
   render() {
     const { HomeStore } = this.injected;
+    const recommended = toJS(HomeStore.recommended);
     return (
       <div>
-        <div>{HomeStore.count}</div>
-
-        <Button onClick={() => HomeStore.plus()}>++++++</Button>
-        <Button type="warning" onClick={() => HomeStore.reduce()}>----</Button>
+        {recommended.map((item, i) => (
+          <div key={i}>
+            <h1>{item.name}</h1>
+          </div>
+        ))}
       </div>
     );
   }
