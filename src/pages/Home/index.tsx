@@ -1,6 +1,7 @@
 import React from 'react';
 import { HomeStore } from 'src/pages/Home/store';
 import { inject, observer } from 'mobx-react';
+import { Button } from 'antd-mobile';
 
 interface Props {}
 interface InjectedProps extends Props {
@@ -19,8 +20,9 @@ class Home extends React.Component<Props, any> {
     return (
       <div>
         <div>{HomeStore.count}</div>
-        <button type="button" onClick={() => HomeStore.plus()}>++++++</button>
-        <button type="button" onClick={() => HomeStore.reduce()}>----</button>
+
+        <Button onClick={() => HomeStore.plus()}>++++++</Button>
+        <Button type="warning" onClick={() => HomeStore.reduce()}>----</Button>
       </div>
     );
   }
