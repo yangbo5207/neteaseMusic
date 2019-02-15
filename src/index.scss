@@ -6,9 +6,29 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html {
+  height: 100%
+}
+
+#root {
+  max-width: 580px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+input, a {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }

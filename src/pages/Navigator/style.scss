@@ -1,0 +1,77 @@
+.nav_container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    flex: 1;
+    background: #F4F6FA;
+  }
+
+  .nav {
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1;
+    position: relative;
+  }
+
+  .nav_item {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #c2c8d1;
+    padding: 30px 10px 0;
+    background-repeat: no-repeat;
+    background-position: center 20%;
+    background-size: 22px;
+
+    &.home {
+      background-image: url('./images/home_default.png');
+    }
+    
+    &.video {
+      background-image: url('./images/customer_default.png')
+    }
+
+    &.myself {
+      background-image: url('./images/profile_default.png')
+    }
+
+    &.friend {
+      background-image: url('./images/message_default.png')
+    }
+
+    &.profile {
+      background-image: url('./images/profile_default.png')
+    }
+  }
+
+  .active {
+    color: #4189fd;
+
+    &.home {
+      background-image: url('./images/home_active.png');
+    }
+    
+    &.video {
+      background-image: url('./images/customer_active.png')
+    }
+
+    &.myself {
+      background-image: url('./images/profile_active.png')
+    }
+
+    &.friend {
+      background-image: url('./images/message_active.png')
+    }
+
+    &.profile {
+      background-image: url('./images/profile_active.png')
+    }
+  }
+}
